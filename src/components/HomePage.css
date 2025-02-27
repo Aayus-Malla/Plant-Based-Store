@@ -1,0 +1,44 @@
+.shop-now-btn {
+  border: 2px solid #27AE60; /* Green border */
+  padding: 14px 28px;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  outline: none;
+  background: linear-gradient(145deg, #ff0000, #cc0000); /* ✅ Red inside color */
+  position: relative;
+  overflow: hidden;
+}
+
+.shop-now-btn .shop-now-text {
+  position: relative;
+  z-index: 2;
+}
+
+.shop-now-btn:hover {
+  background: linear-gradient(145deg, #d40000, #aa0000); /* Darker red on hover */
+  transform: scale(1.05);
+}
+
+.shop-now-btn:active {
+  background: #880000; /* Even darker red when clicked */
+  transform: scale(0.95);
+}
+
+/* Add this for the comment box */
+.comment-section .comment-box {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  resize: vertical; /* Allow vertical resizing */
+}
+
+.comment-section .form-control {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+

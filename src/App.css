@@ -1,0 +1,67 @@
+:root {
+  --body-background-light: #ffffff;
+  --body-color-light: #000000;
+  --body-background-dark: #121212;
+  --body-color-dark: #ffffff;
+}
+
+body[data-theme='light'] {
+  --body-background: var(--body-background-light);
+  --body-color: var(--body-color-light);
+}
+
+body[data-theme='dark'] {
+  --body-background: var(--body-background-dark);
+  --body-color: var(--body-color-dark);
+}
+
+body {
+  background-color: var(--body-background);
+  color: var(--body-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.App-header {
+  background-color: var(--body-background);
+  min-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: calc(10px + 2vmin);
+  color: var(--body-color);
+}
+
+.App-link {
+  color: var(--body-color);
+}
+
+.navbar {
+  background-color: var(--body-background);
+  color: var(--body-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar-brand, .nav-link, .dropdown-item {
+  color: var(--body-color);
+}
+
+.navbar-toggler {
+  border-color: var(--body-color);
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+

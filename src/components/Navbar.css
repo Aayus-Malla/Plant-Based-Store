@@ -1,0 +1,184 @@
+/* Navbar container */
+.navbar {
+  background-color: var(--body-background);
+  color: var(--body-color);
+  transition: background-color 0.3s, color 0.3s;
+  padding: 10px 0; /* Add padding for better spacing */
+}
+
+/* Navbar brand and links */
+.navbar-brand, .nav-link, .dropdown-item {
+  color: var(--body-color, #000); /* Fallback to black if variable is not defined */
+  transition: color 0.3s;
+}
+
+.navbar-brand {
+  font-weight: bold; /* Make brand name stand out */
+  font-size: 1.2rem; /* Increase font size for better visibility */
+}
+
+.nav-link:hover, .nav-link:focus {
+  color: #1D8348; /* Use your brand color */
+}
+
+.nav-link.active {
+  font-weight: bold; /* Highlight active link */
+  color: #1D8348; /* Use your brand color */
+}
+
+/* Navbar Header (Brand + Three-Dot Button) */
+.navbar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/* Toggle Button Styling */
+.navbar-toggler {
+  border: none !important; /* Remove default border */
+  padding: 0 !important; /* Remove padding */
+  display: flex; /* Ensure the icon is centered */
+  align-items: center;
+  justify-content: center;
+  cursor: pointer; /* Add pointer cursor for better UX */
+  background: none !important; /* Remove background */
+  width: auto; /* Let the button size adjust to the content */
+  height: auto; /* Let the button size adjust to the content */
+  margin: 0; /* Remove any default margin */
+  box-shadow: none !important; /* Remove any box shadow */
+}
+
+.navbar-toggler:focus {
+  outline: none !important; /* Remove focus outline */
+  box-shadow: none !important; /* Remove focus shadow */
+}
+
+.navbar-toggler-icon {
+  font-size: 1.5rem; /* Adjust the size of the three dots */
+  color: #000 !important; /* Force the color to black */
+  cursor: pointer; /* Add pointer cursor for better UX */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: none !important; /* Remove Bootstrap's default background image */
+}
+
+/* Light theme adjustment */
+.navbar-light .navbar-toggler-icon {
+  color: #000 !important; /* Force the color to black for light theme */
+}
+
+/* Menu Items (Home, About Us, Shop, Contact Us) */
+.mobile-visible .navbar-nav {
+  flex-direction: row; /* Display links in a row */
+  gap: 35px; /* Add spacing between links */
+  margin-top: 10px; /* Add spacing below the title */
+}
+
+/* Search Bar and Button */
+.mobile-visible .d-flex {
+  flex-direction: row; /* Display search bar and button in a row */
+  gap: 10px; /* Add spacing between search bar and button */
+  margin-top: 10px; /* Add spacing below the menu items */
+}
+
+.mobile-visible .form-control {
+  border-radius: 10px; /* Rounded corners for search bar */
+  border: 1px solid #ccc; /* Add a border */
+  width: 100%; /* Take full width */
+}
+
+.mobile-visible .btn-outline-success {
+  border-radius: 10px; /* Rounded corners for button */
+  padding: 5px 10px; /* Reduce button size */
+  font-size: 0.9rem; /* Reduce font size */
+}
+
+/* Logout Container */
+.logout-container {
+  position: absolute; /* Position the container absolutely */
+  top: 50px; /* Adjust based on your Navbar height */
+  right: 10px; /* Position it to the right */
+  background-color: white; /* Background color for the container */
+  border: 1px solid #ccc; /* Add a border */
+  border-radius: 10px; /* Rounded corners */
+  padding: 10px; /* Add padding */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a shadow for better visibility */
+  z-index: 1000; /* Ensure it appears above other elements */
+}
+
+/* Logout Button */
+.btn-danger {
+  border-radius: 20px; /* Rounded corners */
+  padding: 5px 10px; /* Reduce button size */
+  font-size: 0.9rem; /* Reduce font size */
+  width: 100%; /* Take full width */
+  background-color: #dc3545; /* Red background for logout button */
+  color: white; /* White text for better contrast */
+  border: 1px solid #dc3545; /* Add border to match search button */
+  text-align: center; /* Center text inside the button */
+  display: block; /* Ensure it behaves like a block element */
+}
+
+/* Hover effect for logout button */
+.btn-danger:hover {
+  background-color: #c82333; /* Darker red on hover */
+  border-color: #c82333; /* Darker border on hover */
+}
+
+@media (max-width: 768px) {
+  .navbar-collapse {
+    padding: 10px; /* Add padding for better spacing */
+  }
+
+  .navbar-toggler-icon {
+    font-size: 1.2rem; /* Adjust size for smaller screens */
+  }
+}
+
+/* Desktop Styles */
+@media (min-width: 992px) {
+  .navbar-nav {
+    flex-direction: row !important; /* Force row layout */
+    gap: 20px !important; /* Force spacing between menu items */
+  }
+
+  .navbar-brand {
+    margin-right: auto !important; /* Force brand to the left */
+  }
+
+  .d-flex {
+    margin-left: auto !important; /* Force search bar and logout button to the right */
+  }
+
+  .btn-outline-success {
+    margin-left: 10px !important; /* Force spacing between search bar and button */
+  }
+
+  .btn-danger {
+    margin-left: 10px !important; /* Force spacing between search button and logout button */
+  }
+
+  /* Ensure the desktop menu items are aligned properly */
+  .navbar-nav .nav-item {
+    margin: 0 10px !important; /* Force spacing between menu items */
+  }
+
+  /* Adjust the search bar width on desktop */
+  .form-control {
+    width: 200px !important; /* Force fixed width for the search bar */
+  }
+
+  /* Hide the mobile toggle button on desktop */
+  .navbar-toggler {
+    display: none !important;
+  }
+
+  /* Ensure the desktop menu is visible */
+  .navbar-collapse {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+  }
+}

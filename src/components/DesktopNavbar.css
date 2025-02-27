@@ -1,0 +1,107 @@
+/* Desktop Navbar Container */
+.desktop-navbar {
+    background-color: var(--body-background);
+    color: var(--body-color);
+    padding: 10px 0;
+  }
+  
+  .desktop-navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  /* Brand - Align to far left */
+  .desktop-navbar-brand {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #1D8348;
+    text-decoration: none;
+    margin-right: auto; /* Push brand to the far left */
+  }
+  
+  /* Menu Items */
+  .desktop-navbar-nav {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-left: 20px; /* Add spacing between brand and menu items */
+  }
+  
+  .desktop-nav-item {
+    margin: 0 10px;
+  }
+  
+  .desktop-nav-link {
+    color: var(--body-color, #000);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .desktop-nav-link:hover,
+  .desktop-nav-link:focus {
+    color: #1D8348;
+  }
+  
+  .desktop-nav-link.active {
+    font-weight: bold;
+    color: #1D8348;
+  }
+  
+  /* Search Bar and Logout Button */
+  .desktop-navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Add gap between search bar and button */
+    margin-left: auto; /* Push actions to the far right */
+  }
+  
+  .desktop-search-form {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Add gap between search input and button */
+  }
+  
+  .desktop-search-input {
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    width: 200px;
+  }
+  
+  .desktop-search-button {
+    border-radius: 10px;
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    background-color: #28a745;
+    color: white;
+    border: 1px solid #28a745;
+    cursor: pointer;
+  }
+  
+  .desktop-search-button:hover {
+    background-color: #218838;
+    border-color: #218838;
+  }
+  
+  /* Logout Button - Align to far right */
+  .desktop-logout-button {
+    border-radius: 20px;
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    background-color: #dc3545;
+    color: white;
+    border: 1px solid #dc3545;
+    cursor: pointer;
+    margin-left: 20px; /* Add spacing between search button and logout button */
+  }
+  
+  .desktop-logout-button:hover {
+    background-color: #c82333;
+    border-color: #c82333;
+  }
