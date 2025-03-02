@@ -1,0 +1,88 @@
+.order-management-container {
+  padding: 20px;
+}
+
+.order-list, .edit-order {
+  margin-bottom: 20px;
+}
+
+.order-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.order-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.order-list button {
+  margin-left: 10px;
+  background-color: #1D8348; /* Blue background */
+  color: white; /* White text */
+  border: none; /* Remove border */
+  padding: 10px 20px; /* Padding */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-size: 16px; /* Font size */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.order-list button:hover {
+  background-color: #1D8348; /* Darker blue on hover */
+}
+
+.order-list .delete-button {
+  background-color: #dc3545; /* Red background */
+}
+
+.order-list .delete-button:hover {
+  background-color: #c82333; /* Darker red on hover */
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.error-message {
+  color: red;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Edit Order Button */
+.edit-order button {
+  background-color: #28a745; /* Green background */
+  color: white; /* White text */
+  border: none; /* Remove border */
+  padding: 10px 20px; /* Padding */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-size: 16px; /* Font size */
+  transition: background-color 0.3s ease; /* Smooth transition */
+  margin-right: 10px; /* Add margin to create space between buttons */
+}
+
+.edit-order button:hover {
+  background-color: #218838; /* Darker green on hover */
+}
+
+.user-text {
+  color: green;
+}

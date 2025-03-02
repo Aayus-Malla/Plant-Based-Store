@@ -1,0 +1,35 @@
+.admin-dashboard-container {
+    padding: 20px;
+  }
+  
+  .admin-dashboard-sections {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .admin-dashboard-section {
+    flex: 1 1 calc(33.333% - 20px);
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    text-align: center; /* Center align text within the section */
+  }
+  
+  .admin-dashboard-section h2 {
+    margin-top: 0;
+    font-size: 18px; /* Adjust the font size to make the text smaller */
+    margin-bottom: 10px; /* Add margin to separate the heading from the link */
+  }
+  
+  .admin-dashboard-section a {
+    display: block;
+    margin-top: 10px;
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .admin-dashboard-section a:hover {
+    text-decoration: underline;
+  }

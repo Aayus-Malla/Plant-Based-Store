@@ -9,7 +9,7 @@ function LoginSignup() {
   const navigate = useNavigate();
 
   const validEmail = 'test@example.com';
-  const validPassword = '12345';
+  const validPassword = 'mintu7476';
 
   const handleLogin = (e) => {
     e.preventDefault();

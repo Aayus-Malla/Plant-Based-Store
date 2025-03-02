@@ -27,6 +27,12 @@ import VeganNuggetsCategory from './components/VeganNuggetsCategory';
 import HotDogsCategory from './components/HotDogsCategory';
 import NutMeatCategory from './components/NutMeatCategory';
 import ChickPeaSaladCategory from './components/ChickPeaSaladCategory';
+import AdminDashboard from './components/AdminDashboard.jsx';
+import AdminLogin from './components/AdminLogin.jsx';
+import UserManagement from './components/UserManagement.jsx';
+import ProductManagement from './components/ProductManagement.jsx';
+import OrderManagement from './components/OrderManagement.jsx';
+import Settings from './components/Settings.jsx';
 
 
 function App() {
@@ -40,6 +46,7 @@ function App() {
 function Layout() {
   const location = useLocation();
   const isAuthenticated = localStorage.getItem('isAuthenticated');
+  const isAdmin = localStorage.getItem('isAdmin'); // Assuming you store admin status in localStorage
   
   // Hide navbar on login and signup pages
   const hideNavbarRoutes = ["/login", "/signup"];
@@ -75,6 +82,13 @@ function Layout() {
           <Route path='/categories/hot-dogs' element={<HotDogsCategory />} />
           <Route path="/categories/nut-meat" element={<NutMeatCategory />} />
           <Route path="/categories/chick-pea-salad" element={<ChickPeaSaladCategory />} />
+          <Route path="/admin" element={isAdmin ? <PageTransition><AdminDashboard /></PageTransition> : <Navigate to="/admin/login" />} />
+          <Route path="/admin/login" element={<PageTransition><AdminLogin /></PageTransition>} />
+          <Route path="/admin/user-management" element={isAdmin ? <PageTransition><UserManagement /></PageTransition> : <Navigate to="/admin/login" />} />
+          <Route path="/admin/product-management" element={isAdmin ? <PageTransition><ProductManagement /></PageTransition> : <Navigate to="/admin/login" />} />
+          <Route path="/admin/order-management" element={isAdmin ? <PageTransition><OrderManagement /></PageTransition> : <Navigate to="/admin/login" />} />
+          <Route path="/admin/settings" element={isAdmin ? <PageTransition><Settings /></PageTransition> : <Navigate to="/admin/login" />} />
+          
 
         </Routes>
       </AnimatePresence>

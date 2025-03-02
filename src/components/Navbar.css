@@ -72,7 +72,7 @@
 /* Menu Items (Home, About Us, Shop, Contact Us) */
 .mobile-visible .navbar-nav {
   flex-direction: row; /* Display links in a row */
-  gap: 7px; /* Add spacing between links */
+  gap: 6.5px; /* Add spacing between links */
   margin-top: 10px; /* Add spacing below the title */
 }
 
