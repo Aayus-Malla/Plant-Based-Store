@@ -23,18 +23,18 @@ const renderStars = (rating) => {
 
 // Sample product data with descriptions
 const products = [
-    { id: 1, name: "Vegan Burger", image: "/images/m5.png.png", price: "Rs. 10", rating: 4.5, description: "A delicious vegan burger made with plant-based ingredients." },
-    { id: 2, name: "Plant-Based Burger", image: "/images/m6.png", price: "Rs. 12", rating: 5, description: "A juicy plant-based burger packed with flavor." },
-    { id: 3, name: "Vegan Sausages", image: "/images/m7.png", price: "Rs. 8", rating: 4.5, description: "Tasty vegan sausages perfect for any meal." },
-    { id: 4, name: "Hot Dogs", image: "/images/m8.png", price: "Rs. 19", rating: 5, description: "Classic hot dogs with a vegan twist." },
-    { id: 5, name: "Cauliflower & Chick Pea Curry", image: "/images/m12.png", price: "Rs. 18", rating: 5, description: "A flavorful curry made with cauliflower and chickpeas." },
-    { id: 6, name: "Vegan Nuggets", image: "/images/m13.png", price: "Rs. 20", rating: 4.5, description: "Crunchy and delicious vegan nuggets." },
-    { id: 7, name: "Nut Meat", image: "/images/m15.png", price: "Rs. 22", rating: 5, description: "Nut-based meat alternative rich in protein." },
-    { id: 8, name: "Chocolate", image: "/images/m17.png", price: "Rs. 25", rating: 5, description: "Rich and creamy vegan chocolate." },
-    { id: 9, name: "Cake", image: "/images/m18.png", price: "Rs. 24", rating: 5, description: "Decadent vegan cake for any occasion." },
-    { id: 10, name: "Spicy Sausages", image: "/images/m10.png", price: "Rs. 24", rating: 5, description: "Spicy vegan sausages with a kick." },
-    { id: 11, name: "Cauliflower & Chick Pea Curry", image: "/images/m9.png", price: "Rs. 30", rating: 4.7, description: "A hearty curry with cauliflower and chickpeas." },
-    { id: 12, name: "Burger Patties", image: "/images/m11.png", price: "Rs. 35", rating: 4.7, description: "Plant-based burger patties perfect for grilling." }
+    { id: 1, name: "Vegan Burger", image: "/images/m5.png.png", price: "Rs. 120", rating: 4.5, description: "A delicious vegan burger made with plant-based ingredients." },
+    { id: 2, name: "Plant-Based Burger", image: "/images/m6.png", price: "Rs. 110", rating: 5, description: "A juicy plant-based burger packed with flavor." },
+    { id: 3, name: "Vegan Sausages", image: "/images/m7.png", price: "Rs. 80", rating: 4.5, description: "Tasty vegan sausages perfect for any meal." },
+    { id: 4, name: "Hot Dogs", image: "/images/m8.png", price: "Rs. 120", rating: 5, description: "Classic hot dogs with a vegan twist." },
+    { id: 5, name: "Chick Pea Salad", image: "/images/m12.png", price: "Rs. 400", rating: 5, description: "A flavorful curry made with cauliflower and chickpeas." },
+    { id: 6, name: "Vegan Nuggets", image: "/images/m13.png", price: "Rs. 200", rating: 4.5, description: "Crunchy and delicious vegan nuggets." },
+    { id: 7, name: "Nut Meat", image: "/images/m15.png", price: "Rs. 230", rating: 5, description: "Nut-based meat alternative rich in protein." },
+    { id: 8, name: "Chocolate", image: "/images/m17.png", price: "Rs. 150", rating: 5, description: "Rich and creamy vegan chocolate." },
+    { id: 9, name: "Cake", image: "/images/m18.png", price: "Rs. 150", rating: 5, description: "Decadent vegan cake for any occasion." },
+    { id: 10, name: "Spicy Sausages", image: "/images/m10.png", price: "Rs. 100", rating: 5, description: "Spicy vegan sausages with a kick." },
+    { id: 11, name: "Cauliflower & Chick Pea Curry", image: "/images/m9.png", price: "Rs. 350", rating: 4.7, description: "A hearty curry with cauliflower and chickpeas." },
+    { id: 12, name: "Burger Patties", image: "/images/m11.png", price: "Rs. 100", rating: 4.7, description: "Plant-based burger patties perfect for grilling." }
 ];
   
 

@@ -17,6 +17,17 @@ import KhaltiPayment from "./components/KhaltiPayment.jsx";
 import PaymentButton from "./components/PaymentButton.jsx"; 
 import OrderSuccess from "./components/OrderSuccess.jsx"; 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js'; // Add this for JavaScript components
+import BurgerCategory from './components/BurgerCategory.jsx';
+import SausagesCategory from './components/SausagesCategory';
+import ChocolateCategory from './components/ChocolateCategory';
+import CakeCategory from './components/CakeCategory';
+import CauliflowerChickpeaCurryCategory from './components/CauliflowerChickpeaCurryCategory';
+import VeganNuggetsCategory from './components/VeganNuggetsCategory';
+import HotDogsCategory from './components/HotDogsCategory';
+import NutMeatCategory from './components/NutMeatCategory';
+import ChickPeaSaladCategory from './components/ChickPeaSaladCategory';
+
 
 function App() {
   return (
@@ -55,6 +66,16 @@ function Layout() {
           <Route path="/khalti-payment" element={<KhaltiPayment />} />
           <Route path="/payment" element={<PaymentButton />} />
           <Route path="/success" element={<OrderSuccess />} />
+          <Route path="/categories/burger" element={<BurgerCategory />} />
+          <Route path="/categories/sausages" element={<SausagesCategory />} />
+          <Route path="/categories/chocolate" element={<ChocolateCategory />} />
+          <Route path="/categories/cake" element={<CakeCategory />} />
+          <Route path="/categories/cauliflower-chickpea-curry" element={<CauliflowerChickpeaCurryCategory />} />
+          <Route path="/categories/vegan-nuggets" element={<VeganNuggetsCategory />} />
+          <Route path='/categories/hot-dogs' element={<HotDogsCategory />} />
+          <Route path="/categories/nut-meat" element={<NutMeatCategory />} />
+          <Route path="/categories/chick-pea-salad" element={<ChickPeaSaladCategory />} />
+
         </Routes>
       </AnimatePresence>
     </>

@@ -6,6 +6,7 @@ import './Navbar.css';
 const Navbar = ({ title, aboutText }) => {
   const navigate = useNavigate();
   const [isMenuVisible, setIsMenuVisible] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const handleLogout = () => {
     localStorage.removeItem('isAuthenticated');
@@ -14,6 +15,10 @@ const Navbar = ({ title, aboutText }) => {
 
   const toggleMenu = () => {
     setIsMenuVisible(!isMenuVisible);
+  };
+
+  const toggleDropdown = () => {
+    setDropdownOpen(!dropdownOpen);
   };
 
   return (
@@ -31,10 +36,8 @@ const Navbar = ({ title, aboutText }) => {
           </button>
         </div>
 
-       
-
         {/* Menu Items (Home, About Us, Shop, Contact Us) */}
-        <div className="mobile-visible">
+        <div className={`mobile-visible ${isMenuVisible ? 'show' : ''}`}>
           <ul className="navbar-nav">
             <li className="nav-item">
               <Link className="nav-link" to="/">Home</Link>
@@ -45,21 +48,37 @@ const Navbar = ({ title, aboutText }) => {
             <li className="nav-item">
               <Link className="nav-link" to="/shop">Shop</Link>
             </li>
+            <li className="nav-item dropdown">
+              <span className="nav-link" onClick={toggleDropdown} style={{ cursor: 'pointer' }}>
+                Categories &#9662;
+              </span>
+              {dropdownOpen && (
+                <ul className="dropdown-menu">
+                  <li><Link className="dropdown-item" to="/categories/burger">Burger</Link></li>
+                  <li><Link className="dropdown-item" to="/categories/sausages">Sausages</Link></li>
+                  <li><Link className="dropdown-item" to="/categories/chocolate">Chocolate</Link></li>
+                  <li><Link className="dropdown-item" to="/categories/cake">Cake</Link></li>
+                  <li><Link className="dropdown-item" to="/categories/hot-dogs">Hot Dogs</Link></li>
+                  <li><Link className="dropdown-item" to="/categories/cauliflower-chickpea-curry">Cauliflower & Chick Pea Curry</Link></li>
+                  <li><Link className="dropdown-item" to="/categories/vegan-nuggets">Vegan Nuggets</Link></li>
+                  <li><Link className="dropdown-item" to="/categories/nut-meat">Nut Meat</Link></li>
+                  <li><Link className="dropdown-item" to="/categories/chick-pea-salad">Chick Pea Salad</Link></li>
+                </ul>
+              )}
+            </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/contact-us">Contact Us</Link>
+              <Link className="nav-link" to="/contact-us">ContactUs</Link>
             </li>
           </ul>
         </div>
 
-         {/* Search Bar and Button */}
-         <div className="mobile-visible">
+        {/* Search Bar and Button */}
+        <div className={`mobile-visible ${isMenuVisible ? 'show' : ''}`}>
           <form className="d-flex" role="search">
             <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
             <button className="btn btn-outline-success" type="submit">Search</button>
           </form>
         </div>
-
-        
 
         {/* Hidden Menu (Logout Button in a Container) */}
         {isMenuVisible && (

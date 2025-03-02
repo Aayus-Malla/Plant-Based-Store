@@ -28,7 +28,7 @@ function Shop() {
     { id: 2, name: "Plant-Based Burger", image: "/images/m6.png", rating: 5, description: "A juicy plant-based burger packed with flavor." },
     { id: 3, name: "Vegan Sausages", image: "/images/m7.png", rating: 4.5, description: "Plant-Based Tasty vegan sausages perfect for any meal." },
     { id: 4, name: "Hot Dogs", image: "/images/m8.png", rating: 5, description: "Classic hot dogs with a vegan twist." },
-    { id: 5, name: "Cauliflower & Chick Pea Curry", image: "/images/m12.png", rating: 5, description: "Flavorful curry made with cauliflower & peas." },
+    { id: 5, name: "Chick Pea Salad", image: "/images/m12.png", rating: 5, description: "Flavorful curry made with cauliflower & peas." },
     { id: 6, name: "Vegan Nuggets", image: "/images/m13.png", rating: 4.5, description: "Crunchy and delicious vegan nuggets." },
     { id: 7, name: "Nut Meat", image: "/images/m15.png", rating: 5, description: "Nut-based meat alternative rich in protein." },
     { id: 8, name: "Chocolate", image: "/images/m17.png", rating: 5, description: "Rich and creamy vegan chocolate." },

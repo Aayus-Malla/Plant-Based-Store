@@ -105,3 +105,10 @@
     background-color: #c82333;
     border-color: #c82333;
   }
+
+  .dropdown-menu {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  
