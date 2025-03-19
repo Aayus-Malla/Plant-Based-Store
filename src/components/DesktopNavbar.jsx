@@ -11,7 +11,11 @@ const DesktopNavbar = ({ title, aboutText }) => {
   const handleLogout = () => {
     localStorage.removeItem('isAuthenticated');
     localStorage.removeItem('isAdmin');
-    navigate('/admin/login');
+    if (location.pathname.startsWith('/admin')) {
+      navigate('/admin/login');
+    } else {
+      navigate('/login');
+    }
   };
 
   const toggleDropdown = () => {

@@ -49,7 +49,7 @@ function Layout() {
   const isAdmin = localStorage.getItem('isAdmin'); // Assuming you store admin status in localStorage
   
   // Hide navbar on login and signup pages
-  const hideNavbarRoutes = ["/login", "/signup"];
+  const hideNavbarRoutes = ["/login", "/signup", "/admin/login"];
   const isDesktop = window.innerWidth >= 992;
   const showNavbar = isAuthenticated && !hideNavbarRoutes.includes(location.pathname);
 
@@ -88,8 +88,6 @@ function Layout() {
           <Route path="/admin/product-management" element={isAdmin ? <PageTransition><ProductManagement /></PageTransition> : <Navigate to="/admin/login" />} />
           <Route path="/admin/order-management" element={isAdmin ? <PageTransition><OrderManagement /></PageTransition> : <Navigate to="/admin/login" />} />
           <Route path="/admin/settings" element={isAdmin ? <PageTransition><Settings /></PageTransition> : <Navigate to="/admin/login" />} />
-          
-
         </Routes>
       </AnimatePresence>
     </>
