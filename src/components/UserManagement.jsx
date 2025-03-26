@@ -5,11 +5,14 @@ const UserManagement = () => {
   const [users, setUsers] = useState([]);
   const [newUser, setNewUser] = useState({ username: '', email: '' });
   const [editUser, setEditUser] = useState(null);
+  const [searchTerm, setSearchTerm] = useState('');
   const [error, setError] = useState('');
+  const [activityLogs, setActivityLogs] = useState([]);
 
   useEffect(() => {
-    // Fetch users from the backend
+    // Fetch users and activity logs from the backend
     fetchUsers();
+    fetchActivityLogs();
   }, []);
 
   const fetchUsers = async () => {
@@ -19,6 +22,16 @@ const UserManagement = () => {
       setUsers(data);
     } catch (error) {
       setError('Failed to fetch users');
+    }
+  };
+
+  const fetchActivityLogs = async () => {
+    try {
+      const response = await fetch('https://your-backend-api.com/activity-logs');
+      const data = await response.json();
+      setActivityLogs(data);
+    } catch (error) {
+      setError('Failed to fetch activity logs');
     }
   };
 
@@ -79,27 +92,59 @@ const UserManagement = () => {
     }
   };
 
+  const handleSuspendUser = async (userId) => {
+    try {
+      const response = await fetch(`https://your-backend-api.com/users/${userId}/suspend`, {
+        method: 'POST',
+      });
+      if (response.ok) {
+        fetchUsers();
+      } else {
+        setError('Failed to suspend user');
+      }
+    } catch (error) {
+      setError('Failed to suspend user');
+    }
+  };
+
+  const filteredUsers = users.filter(user =>
+    user.username.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    user.email.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <div className="user-management-container">
       <h1 className="user-management-title">
         <span className="user-text">User</span> <span className="management-text">Management</span>
       </h1>
       {error && <p className="error-message">{error}</p>}
+      
+      <div className="search-bar">
+        <input
+          type="text"
+          placeholder="Search users..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
+      </div>
+
       <div className="user-list">
         <ul>
-          {users.map((user) => (
+          {filteredUsers.map((user) => (
             <li key={user.id}>
               {user.username} ({user.email})
               <button onClick={() => setEditUser(user)}>Edit</button>
               <button onClick={() => handleDeleteUser(user.id)}>Delete</button>
+              <button onClick={() => handleSuspendUser(user.id)}>Suspend</button>
             </li>
           ))}
         </ul>
       </div>
+
       <div className="add-user">
-      <h2 className="user-management-title">
-        <span className="user-text">Add</span> <span className="management-text">user's</span>
-      </h2>
+        <h2 className="user-management-title">
+          <span className="user-text">Add</span> <span className="management-text">User</span>
+        </h2>
         <form onSubmit={handleAddUser}>
           <div className="form-group">
             <label htmlFor="username">Username</label>
@@ -126,6 +171,7 @@ const UserManagement = () => {
           </div>
         </form>
       </div>
+
       {editUser && (
         <div className="edit-user">
           <h2>Edit User</h2>
@@ -155,6 +201,8 @@ const UserManagement = () => {
           </form>
         </div>
       )}
+
+      
     </div>
   );
 };
