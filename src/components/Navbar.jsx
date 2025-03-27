@@ -8,11 +8,17 @@ const Navbar = ({ title, aboutText }) => {
   const location = useLocation();
   const [isMenuVisible, setIsMenuVisible] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const isAdmin = localStorage.getItem('isAdmin');
 
   const handleLogout = () => {
     localStorage.removeItem('isAuthenticated');
-    navigate('/login');
+    localStorage.removeItem('isAdmin');
+
+    // Check if the current route is an admin route
+    if (location.pathname.startsWith('/admin')) {
+      navigate('/admin/login'); // Navigate to admin login page
+    } else {
+      navigate('/login'); // Navigate to user login page
+    }
   };
 
   const toggleMenu = () => {
@@ -25,13 +31,23 @@ const Navbar = ({ title, aboutText }) => {
 
   // Check if the current route is an admin route
   const isAdminRoute = location.pathname.startsWith('/admin');
-  const isHomePage = location.pathname === '/';
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container-fluid">
         {/* Conditionally render the brand based on the current route */}
-        {!isAdminRoute && (
+        {isAdminRoute ? (
+          <div className="navbar-header">
+            <span className="navbar-brand" style={{ color: '#1D8348' }}>Admin Dashboard</span>
+            <button
+              className="navbar-toggler"
+              type="button"
+              onClick={toggleMenu}
+            >
+              <span className="navbar-toggler-icon">&#9776;</span>
+            </button>
+          </div>
+        ) : (
           <div className="navbar-header">
             <Link className="navbar-brand" to="/" style={{ color: '#1D8348' }}>{title}</Link>
             <button
@@ -45,7 +61,7 @@ const Navbar = ({ title, aboutText }) => {
         )}
 
         {/* Conditionally render menu items based on the current route */}
-        {!isAdminRoute && (
+        {!isAdminRoute ? (
           <>
             <div className={`mobile-visible ${isMenuVisible ? 'show' : ''}`}>
               <ul className="navbar-nav">
@@ -58,11 +74,6 @@ const Navbar = ({ title, aboutText }) => {
                 <li className="nav-item">
                   <Link className="nav-link" to="/shop">Shop</Link>
                 </li>
-                {!isHomePage && isAdmin && (
-                <li className="desktop-nav-item">
-                  <Link className="desktop-nav-link" to="/admin">Admin</Link>
-                </li>
-                )}
                 <li className="nav-item dropdown">
                   <span className="nav-link" onClick={toggleDropdown} style={{ cursor: 'pointer' }}>
                     Categories &#9662;
@@ -95,7 +106,20 @@ const Navbar = ({ title, aboutText }) => {
               </form>
             </div>
 
-            {/* Hidden Menu (Logout Button in a Container) */}
+            {/* Logout Button */}
+            {isMenuVisible && (
+              <div className="logout-container">
+                <button 
+                  onClick={handleLogout} 
+                  className="btn btn-danger">
+                  Logout
+                </button>
+              </div>
+            )}
+          </>
+        ) : (
+          <>
+            {/* Only show the logout button for admin routes */}
             {isMenuVisible && (
               <div className="logout-container">
                 <button 
