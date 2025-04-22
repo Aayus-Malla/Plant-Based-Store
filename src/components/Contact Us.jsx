@@ -82,17 +82,17 @@ function ContactUs() {
                     E-mail: support@plantstore.com
                     </p>
                     <p className="text-dark fw-bold">
-                    Address: Anamnagar, New Baneshwor
-                    Near Prabhu Bank, From there around 5 minutes.
+                    Address: Kathmandu-09, Battisputali Road
+                    Near Nepal Limited Bank, From there around 1 minutes.
                     </p>
                     <p className="text-dark fw-bold">
                     Phone No: +977 - 9837510538
                     </p>
                     <p className="text-dark fw-bold">
-                    Hours: Monday - Thursday (10:00 AM - 5:OO PM)
+                    Hours: Monday - Friday (11:00 AM - 5:OO PM)
                     </p>
                     <p className="text-dark fw-bold">
-                    Friday (10:00 AM - 2:00 PM)
+                    Friday (11:00 AM - 4:00 PM)
                     </p>
             </Container>
 
@@ -125,7 +125,7 @@ function ContactUs() {
               <ul className="list-unstyled">
                 <li><i className="fas fa-envelope"></i> support@plantstore.com</li>
                 <li><i className="fas fa-phone"></i> +977 - 9837510538</li>
-                <li><i className="fas fa-map-marker-alt"></i> Anamnagar, New Baneshwor</li>
+                <li><i className="fas fa-map-marker-alt"></i> Kathmandu-09, Battisputali Road</li>
               </ul>
             </Col>
           </Row>

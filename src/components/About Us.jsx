@@ -95,7 +95,7 @@ function AboutUs () {
                       <ul className="list-unstyled">
                         <li><i className="fas fa-envelope"></i> support@plantstore.com</li>
                         <li><i className="fas fa-phone"></i> +977 - 9837510538</li>
-                        <li><i className="fas fa-map-marker-alt"></i> Anamnagar, New Baneshwor</li>
+                        <li><i className="fas fa-map-marker-alt"></i> Kathmandu-09, Battisputali Road</li>
                       </ul>
                     </Col>
                   </Row>
